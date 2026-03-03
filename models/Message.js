@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-
-// Schema for Contact Form Messages
 const messageSchema = new mongoose.Schema({
     name: {
         type: String,
