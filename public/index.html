@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <img src="ProfilePhoto.png" alt="logo">
+                Suyash Gardi Portfolio</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="about">
+        <div class="container">
+            <h1>Hi, I'm a Full-Stack Developer</h1>
+            <p>I build scalable, responsive, and data-driven web applications.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </header>
+
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+          
+            <div class="grid" id="projectsGrid">
+                <p style="text-align: center; width: 100%;">Loading projects...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" class="form-input" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" class="form-input" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" class="form-textarea" required placeholder="Hello! I'd like to work with you..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                <div id="formStatus" class="form-status"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Suyash Gardi. Built with Node.js & Express.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
