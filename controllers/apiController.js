@@ -2,10 +2,9 @@ const Project = require('../models/Project');
 const Message = require('../models/Message');
 const nodemailer = require('nodemailer');
 
-// GET /api/projects - Fetch all projects
+
 exports.getProjects = async (req, res) => {
     try {
-        // Fetch projects sorted by newest first
         const projects = await Project.find().sort({ createdAt: -1 });
         res.status(200).json(projects);
     } catch (error) {
@@ -14,21 +13,16 @@ exports.getProjects = async (req, res) => {
     }
 };
 
-// POST /api/contact - Handle contact form submission
+
 exports.submitContact = async (req, res) => {
     const { name, email, message } = req.body;
-
-    // Backend Validation
     if (!name || !email || !message) {
         return res.status(400).json({ error: 'Please fill in all fields.' });
     }
 
     try {
-        // 1. Save message to MongoDB
         const newMessage = new Message({ name, email, message });
         await newMessage.save();
-
-        // 2. Send Email Notification via Nodemailer
         if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
             const transporter = nodemailer.createTransport({
                 service: process.env.EMAIL_SERVICE || 'gmail',
