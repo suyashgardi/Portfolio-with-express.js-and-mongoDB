@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-
-// Schema for Portfolio Projects
 const projectSchema = new mongoose.Schema({
     title: {
         type: String,
